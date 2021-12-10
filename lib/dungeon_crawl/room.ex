@@ -1,16 +1,23 @@
 defmodule DungeonCrawl.Room do
   @moduledoc false
   alias DungeonCrawl.Room
+  alias DungeonCrawl.Room.Triggers
 
   import DungeonCrawl.Room.Action
 
-  defstruct description: nil, actions: []
+  defstruct description: nil, actions: [], trigger: nil
 
   def all do
     [
       %Room{
         description: "You found a quiet place. Looks safe for a little nap.",
-        actions: [forward(), rest(), search(), back()]
+        actions: [forward(), rest(), search(), back()],
+        trigger: Triggers.Exit
+      },
+      %Room{
+        description: "You can see the light of day. You found the exit !",
+        actions: [forward()],
+        trigger: Triggers.Enemy
       }
     ]
   end

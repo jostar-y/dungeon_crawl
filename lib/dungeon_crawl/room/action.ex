@@ -2,6 +2,7 @@ defmodule DungeonCrawl.Room.Action do
   @moduledoc false
   alias DungeonCrawl.Room.Action
 
+  @type t :: %Action{id: atom, label: String.t}
   defstruct label: nil,
             id: nil
 
