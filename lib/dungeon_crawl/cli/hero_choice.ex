@@ -2,6 +2,7 @@ defmodule DungeonCrawl.Cli.HeroChoice do
   @moduledoc false
   alias Mix.Shell.IO, as: Shell
   import DungeonCrawl.Cli.BaseCommands
+
   def start do
     Shell.cmd("clear")
     Shell.info("Start by choosing your hero:")

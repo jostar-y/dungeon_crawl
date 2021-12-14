@@ -21,4 +21,14 @@ defmodule DungeonCrawl.Cli.BaseCommands do
     {option, _} = Integer.parse(answer)
     option - 1
   end
+
+  def with_case do
+    with :aa <- :aa ,
+    :b <- :bb do
+      IO.puts("with is good")
+    else
+      :bb ->IO.puts("with is error")
+    end
+  end
+
 end

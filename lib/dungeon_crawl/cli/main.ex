@@ -9,13 +9,14 @@ defmodule DungeonCrawl.Cli.Main do
   end
 
   defp welcome_message do
+    DungeonCrawl.Cli.BaseCommands.with_case()
     Shell.info("=== Dungeon Crawl ===")
     Shell.info("You awake in a dungeon full of monsters.")
     Shell.info("You need to survive and find the exit")
   end
 
   defp hero_choice do
-    hero = DungeonCrawl.CLI.HeroChoice.start()
+    hero = DungeonCrawl.Cli.HeroChoice.start()
     %{hero | name: "You"}
   end
 
